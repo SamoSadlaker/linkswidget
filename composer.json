@@ -1,0 +1,30 @@
+{
+    "name": "samosadlaker/linkswidget",
+    "description": "Just a simple widget to display links inside statamic CP.",
+    "keywords": ["statamic", "widget", "links"],
+    "type": "statamic-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SamoSadlaker",
+            "email": "dev@samosadlaker.eu",
+            "homepage": "https://samosadlaker.eu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SamoSadlaker\\Linkswidget\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Linkswidget",
+            "description": "Just a simple widget to display links inside statamic CP."
+        },
+        "laravel": {
+            "providers": [
+                "SamoSadlaker\\Linkswidget\\ServiceProvider"
+            ]
+        }
+    }
+}
