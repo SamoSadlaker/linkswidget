@@ -23,6 +23,10 @@ To add the widget to the dashboard, add the following entry to the widgets array
 ```
 
 ## How to customize it
+Just run this command
+```bash
+php artisan vendor:publish --tag=samosadlaker-linkswidget-config
+```
 Inside `config/statamic/links.php` you can add your links with icons.
 It has a folowing strucutre: 
 ```php
