@@ -1,8 +1,8 @@
 {
     "name": "samosadlaker/linkswidget",
     "description": "Just a simple widget to display links inside statamic CP.",
+    "homepage": "https://github.com/SamoSadlaker/linkswidget",
     "keywords": ["statamic", "widget", "links"],
-    "type": "statamic-addon",
     "license": "MIT",
     "authors": [
         {
@@ -15,6 +15,9 @@
         "psr-4": {
             "SamoSadlaker\\Linkswidget\\": "src"
         }
+    },
+    "require": {
+        "statamic/cms": "^3.0"
     },
     "extra": {
         "statamic": {
