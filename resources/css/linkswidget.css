@@ -1,0 +1,15 @@
+@import "tailwindcss/utilities";
+
+.lw-icon{
+  color: #1c2e36;
+}
+.dark .lw-icon{
+  color: #fff;
+}
+
+.lw-box:hover{
+  background-color: #f5f8fc;
+}
+.dark .lw-box:hover{
+  background-color: #393b40;
+}
