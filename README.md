@@ -38,3 +38,7 @@ It has a folowing strucutre:
 ```
 I am using boxicons image library, so here you can search for icon names: https://boxicons.com/
 If you want you can use another icons library by adding styles to statamic panel and just use class names.
+
+
+## License
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
