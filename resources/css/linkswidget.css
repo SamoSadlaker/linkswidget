@@ -1,15 +1,103 @@
 @import "tailwindcss/utilities";
 
-.lw-icon{
-  color: #1c2e36;
-}
-.dark .lw-icon{
-  color: #fff;
+.lw-widget {
+  display: block;
 }
 
-.lw-box:hover{
-  background-color: #f5f8fc;
+.lw-description {
+  color: rgb(100 116 139);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
-.dark .lw-box:hover{
-  background-color: #393b40;
+
+.dark .lw-description {
+  color: rgb(148 163 184);
+}
+
+.lw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+}
+
+.lw-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 5.5rem;
+  padding: 0.75rem 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(226 232 240 / 0.8);
+  background: linear-gradient(180deg, rgb(248 250 252), rgb(241 245 249));
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.lw-link:focus-visible {
+  outline: 2px solid rgb(56 189 248);
+  outline-offset: 2px;
+}
+
+.lw-link:active {
+  transform: translateY(1px);
+  background: rgb(224 242 254);
+}
+
+.lw-icon {
+  display: inline-flex;
+  color: rgb(15 23 42);
+}
+
+.lw-title {
+  color: rgb(30 41 59);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+.lw-empty {
+  margin: 0;
+  color: rgb(100 116 139);
+  font-size: 0.875rem;
+}
+
+.dark .lw-link {
+  border-color: rgb(71 85 105 / 0.8);
+  background: linear-gradient(180deg, rgb(30 41 59), rgb(15 23 42));
+}
+
+.dark .lw-icon,
+.dark .lw-title {
+  color: rgb(226 232 240);
+}
+
+.dark .lw-empty {
+  color: rgb(148 163 184);
+}
+
+.dark .lw-link:active {
+  background: rgb(30 58 138);
+  border-color: rgb(96 165 250);
+}
+
+@media (min-width: 480px) {
+  .lw-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lw-link:hover {
+    background: rgb(240 249 255);
+    border-color: rgb(125 211 252);
+    transform: translateY(-1px);
+  }
+
+  .dark .lw-link:hover {
+    background: rgb(30 58 138);
+    border-color: rgb(96 165 250);
+  }
 }

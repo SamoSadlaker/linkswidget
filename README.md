@@ -1,20 +1,24 @@
 # Linkswidget
-Just simple widgets that will display quick links in statamic dashboard.
+Simple dashboard widget that displays quick links in the Statamic Control Panel.
+
+Compatible with Statamic v5 and v6.
 
 ## Features
-- Easy & simple
 - Lightweight
+- Fast dashboard navigation
+- Native Statamic CP icons
 
 ## How to Install
 
 You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
 
-``` bash
+```bash
 composer require samosadlaker/linkswidget
 ```
 
 ## How to Use
-To add the widget to the dashboard, add the following entry to the widgets array in config/statamic/cp.php:
+Add the widget to the `widgets` array in `config/statamic/cp.php`:
+
 ```php
 [
     'type' => 'links',
@@ -22,23 +26,34 @@ To add the widget to the dashboard, add the following entry to the widgets array
 ],
 ```
 
-## How to customize it
-Just run this command
+## How to Customize
+Publish the config file:
+
 ```bash
 php artisan vendor:publish --tag=samosadlaker-linkswidget-config
 ```
-Inside `config/statamic/links.php` you can add your links with icons.
-It has a folowing strucutre: 
+
+Then edit `config/statamic/links.php` and define links:
+
 ```php
 [
-  'icon' => 'bx-home',
+  'icon' => 'home',
   'title' => 'Home',
-  'url' => '/'
+  'url' => '/',
+  'new_tab' => false,
 ]
 ```
-I am using boxicons image library, so here you can search for icon names: https://boxicons.com/
-If you want you can use another icons library by adding styles to statamic panel and just use class names.
 
+## Icon Format
+
+- Use native Statamic icon names (example: `home`, `folder`, `settings`).
+- You can also pass a full icon path (example: `icons/home`).
+
+## Migration Notes
+
+- Older Boxicons classes (such as `bx bx-home`) are no longer rendered directly.
+- Legacy icon values fall back to a safe default icon, so existing configs do not break the widget.
+- Update your icon values to native Statamic icon names for best results.
 
 ## License
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

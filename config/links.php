@@ -3,9 +3,10 @@
 return [
     'links' => [
         [
-            'icon' => 'bx bx-home',
+            'icon' => 'home',
             'title' => 'Home',
-            'url' => '/'
-        ]
-    ]
+            'url' => '/',
+            'new_tab' => false,
+        ],
+    ],
 ];

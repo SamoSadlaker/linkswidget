@@ -3,6 +3,7 @@
 namespace SamoSadlaker\Linkswidget;
 
 use Statamic\Providers\AddonServiceProvider;
+use SamoSadlaker\Linkswidget\Widgets\LinksWidget;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -15,12 +16,12 @@ class ServiceProvider extends AddonServiceProvider
     ];
 
     protected $widgets = [
-        \SamoSadlaker\Linkswidget\Widgets\LinksWidget::class
+        LinksWidget::class,
     ];
+
     public function bootAddon()
     {
-        parent::boot();
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/widgets', 'linkswidget');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'linkswidget');
         $this->mergeConfigFrom(__DIR__ . '/../config/links.php', 'statamic.links');
 
         $this->publishes([
