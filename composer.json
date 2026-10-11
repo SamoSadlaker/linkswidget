@@ -1,8 +1,8 @@
 {
     "name": "samosadlaker/linkswidget",
-    "description": "Just a simple widget to display links inside statamic CP.",
+    "description": "A simple Control Panel dashboard widget for displaying quick links in Statamic.",
     "homepage": "https://github.com/SamoSadlaker/linkswidget",
-    "keywords": ["statamic", "widget", "links"],
+    "keywords": ["statamic", "widget", "links", "dashboard", "control-panel"],
     "license": "MIT",
     "authors": [
         {
@@ -11,22 +11,42 @@
             "homepage": "https://samosadlaker.eu"
         }
     ],
+    "support": {
+        "email": "dev@samosadlaker.eu",
+        "issues": "https://github.com/SamoSadlaker/linkswidget/issues",
+        "source": "https://github.com/SamoSadlaker/linkswidget"
+    },
     "autoload": {
         "psr-4": {
-            "SamoSadlaker\\Linkswidget\\": "src"
+            "SamoSadlaker\\LinksWidget\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SamoSadlaker\\LinksWidget\\Tests\\": "tests"
         }
     },
     "require": {
         "statamic/cms": "^5.0 || ^6.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^10.8",
+        "phpunit/phpunit": "^11.5"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
     "extra": {
         "statamic": {
             "name": "Linkswidget",
-            "description": "Just a simple widget to display links inside statamic CP."
+            "slug": "linkswidget",
+            "description": "A simple Control Panel dashboard widget for displaying quick links in Statamic.",
+            "developer": "SamoSadlaker",
+            "developer-url": "https://samosadlaker.eu"
         },
         "laravel": {
             "providers": [
-                "SamoSadlaker\\Linkswidget\\ServiceProvider"
+                "SamoSadlaker\\LinksWidget\\ServiceProvider"
             ]
         }
     },
