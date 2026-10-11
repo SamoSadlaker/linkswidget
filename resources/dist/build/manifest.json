@@ -1,7 +1,11 @@
 {
   "resources/css/linkswidget.css": {
-    "file": "assets/linkswidget-a0fc180b.css",
+    "file": "assets/linkswidget-7oX4FTJR.css",
+    "src": "resources/css/linkswidget.css",
     "isEntry": true,
-    "src": "resources/css/linkswidget.css"
+    "name": "linkswidget",
+    "names": [
+      "linkswidget.css"
+    ]
   }
 }

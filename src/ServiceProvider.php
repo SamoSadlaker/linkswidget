@@ -1,12 +1,17 @@
 <?php
 
-namespace SamoSadlaker\Linkswidget;
+namespace SamoSadlaker\LinksWidget;
 
+use SamoSadlaker\LinksWidget\Widgets\LinksWidget;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {
-
+    /**
+     * The Vite entry points and build directory for the addon's assets.
+     *
+     * @var array
+     */
     protected $vite = [
         'input' => [
             'resources/css/linkswidget.css',
@@ -14,17 +19,38 @@ class ServiceProvider extends AddonServiceProvider
         'publicDirectory' => 'resources/dist',
     ];
 
+    /**
+     * The dashboard widgets provided by the addon.
+     *
+     * @var array
+     */
     protected $widgets = [
-        \SamoSadlaker\Linkswidget\Widgets\LinksWidget::class
+        LinksWidget::class,
     ];
-    public function bootAddon()
+
+    /**
+     * Merge and publish the addon config inside Statamic's config folder.
+     *
+     * The default base behaviour would publish to config/linkswidget.php, but
+     * this addon keeps its config next to Statamic's own files so it is loaded
+     * as "config/statamic/linkswidget.php" (config key: statamic.linkswidget).
+     *
+     * @return $this
+     */
+    protected function bootConfig()
     {
-        parent::boot();
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/widgets', 'linkswidget');
-        $this->mergeConfigFrom(__DIR__ . '/../config/links.php', 'statamic.links');
+        $origin = __DIR__.'/../config/linkswidget.php';
+
+        if (! file_exists($origin)) {
+            return $this;
+        }
+
+        $this->mergeConfigFrom($origin, 'statamic.linkswidget');
 
         $this->publishes([
-            __DIR__ . '/../config/links.php' => config_path('statamic/links.php'),
-        ], 'samosadlaker-linkswidget-config');
+            $origin => config_path('statamic/linkswidget.php'),
+        ], 'linkswidget-config');
+
+        return $this;
     }
 }

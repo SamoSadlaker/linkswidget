@@ -1,15 +1,7 @@
-@import "tailwindcss/utilities";
+@import "@statamic/cms/tailwind.css";
 
-.lw-icon{
-  color: #1c2e36;
-}
-.dark .lw-icon{
-  color: #fff;
-}
+@source "../views";
 
-.lw-box:hover{
-  background-color: #f5f8fc;
-}
-.dark .lw-box:hover{
-  background-color: #393b40;
+@layer addon-utilities {
+    /* Addon specific styles go here. */
 }
